@@ -4,6 +4,7 @@ import { MAKE_REQUEST, GET_DATA, ERROR, UPDATE_HAS_NEXT_PAGE } from './types';
 // GitHub URL
 const BASE_URL =
   'https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json';
+// const BASE_URL = 'https://jobs.github.com/positions.json';
 
 // Get jobs
 export const getJobs = () => async (dispatch) => {
