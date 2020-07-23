@@ -10,6 +10,8 @@ const BASE_URL =
 export const getJobs = () => async (dispatch) => {
   dispatch({ type: MAKE_REQUEST });
 
+  const cancelToken1 = axios.CancelToken.source();
+
   try {
     const res = await axios.get(BASE_URL);
 
@@ -23,4 +25,8 @@ export const getJobs = () => async (dispatch) => {
       payload: { msg: err.response.statusText, status: err.response.status },
     });
   }
+
+  return () => {
+    cancelToken1.cancel();
+  };
 };

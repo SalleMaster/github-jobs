@@ -12,7 +12,7 @@ const Jobs = ({ getJobs, job }) => {
   useEffect(() => {
     console.log('this ran');
     getJobs();
-  }, []);
+  }, [getJobs]);
 
   const { jobs, loading, error } = job;
 
